@@ -1,4 +1,3 @@
-public enum TipoModulo {Observacion, Ataque, Defensa, PotenciadorDeEnergía, Laboratorio
+public enum TipoModulo {Observacion, Ataque, Defensa, PotenciadorDeEnergía, Laboratorio, Localizacion, GeneradorDeEnergía}
     
-}
 
