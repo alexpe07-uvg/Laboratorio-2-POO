@@ -159,7 +159,7 @@ public void addPlanetaDescubierto (Planeta nuevoPlaneta) {
 
     // verificar si ya existe un planeta con el mismo ID
     if (buscarPlanetaPorID(nuevoPlaneta.getIDPlanet()) != null) {
-        throw new IllegalStateException("Ya existe un planeta con el mismo ID.");
+        throw new IllegalArgumentException("Ya existe un planeta con el mismo ID.");
     }
 
     planetasADescubrir.add(nuevoPlaneta);
