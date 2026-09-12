@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 // try - catch y finally en main
 public class Main {
@@ -109,9 +109,7 @@ public class Main {
                                 default: throw new IllegalArgumentException("Opción de tipo inválida.");
                             }
 
-                            System.out.print("\nConsumo de energía del módulo (kW) > 0: ");
-                            float energyConsumption = sc.nextFloat();
-
+                    
                             //Selección del estado del módulo
                             System.out.println("\nEstados disponibles:");
                             System.out.println("1. EnTierra | 2. EnProcesoDeDespegue | 3. EnVuelo | 4. EnOrbita | 5. EnProcesoDeAterrizaje | 6. Aterrizado");
@@ -129,6 +127,9 @@ public class Main {
                                 case 6: estado = EstadoModulo.Aterrizado; break;
                                 default: throw new IllegalArgumentException("Opción de estado inválida.");
                             }
+
+                            System.out.print("\nConsumo de energía del módulo (kW) > 0: ");
+                            float energyConsumption = sc.nextFloat();
 
                             Modulo nuevoModulo = new Modulo(idMod, nameMod, tipo, energyConsumption, estado);
                             nave.addModulos(position, nuevoModulo);
@@ -159,7 +160,7 @@ public class Main {
                 case 4:
                     // Lógica para consultar un módulo
                     System.out.println("\n==========CONSULTA DE MÓDULO POR POSICIÓN==========\n");
-                    System.out.println("¿Qué posición del arreglo de moddulos desea consultar? (0-4):"); 
+                    System.out.println("¿Qué posición del arreglo de modulos desea consultar? (0-4):"); 
                     int positionToConsult = sc.nextInt();
                     sc.nextLine(); // Limpiar el buffer
 
@@ -264,7 +265,12 @@ public class Main {
                     sc.nextLine();
 
                     Planeta planetaEncontrado = nave.buscarPlanetaPorID(idPlanetaABuscar);
-                    System.out.println("\nInformación del planeta encontrado: " + planetaEncontrado.toString());
+                    if (planetaEncontrado!= null) {
+                        System.out.println("\nInformación del planeta encontrado: " + planetaEncontrado.toString());
+                    } else {
+                        System.out.println("\nNo se encontro ningún planeta con el ID ingresado");
+                    }
+                    
 
                     break;
 
@@ -278,6 +284,10 @@ public class Main {
                     sc.nextLine(); // Limpiar el buffer
 
                     Planeta planetaAModificar = nave.buscarPlanetaPorID(idPlanetaAModificar);
+                    if (planetaAModificar == null) {
+                        System.out.println("\nNo se encontró ningún planeta con el ID ingresado.");
+                        break;
+                    }
 
                     System.out.println("\nEl planeta seleccionado es: " + planetaAModificar.toString());
 

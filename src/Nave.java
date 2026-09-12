@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Nave {
     private String nameShip;
@@ -146,6 +146,7 @@ public Planeta buscarPlanetaPorID(int IDPlanet) {
         if (planeta.getIDPlanet() == IDPlanet) {// si se encuentra un planeta con el ID ingresado, se imprime su info
             return planeta;
         } 
+        
     }
     return null; // si no se encuentra un planeta con el ID ingresado, se retorna null
 }

@@ -6,7 +6,7 @@ public class Modulo {
     private EstadoModulo state;
 
 
-
+    
     public Modulo(int IDModule, String nameModule, TipoModulo type, float energyConsumption, EstadoModulo state) {
         this.IDModule = IDModule;
         this.nameModule = nameModule;
