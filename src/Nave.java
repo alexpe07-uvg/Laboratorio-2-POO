@@ -1,12 +1,12 @@
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Nave {
     private String nameShip;
     private int IDShip;
     private String nameCommandant;
     private Modulo [] modulos;
-    private List <Planeta> planetasADescubrir;
+    private ArrayList<Planeta> planetasADescubrir;
 
 
     public Nave(String nameShip, int IDShip, String nameCommandant) {
@@ -39,7 +39,7 @@ public class Nave {
     }
 
 
-    public List <Planeta> getPlanetasADescubrir() {
+    public ArrayList <Planeta> getPlanetasADescubrir() {
         return planetasADescubrir;
     }
 
